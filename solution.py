@@ -23,7 +23,7 @@ class Vec2d:
         return Vec2d(self.x * k, self.y * k)
 
     def __len__(self):
-    	"""returns lenght of a vector"""
+        """returns lenght of a vector"""
         return math.sqrt(self.x * self.x + self.y * self.y)
 
     def int_pair(self):

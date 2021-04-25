@@ -1,3 +1,9 @@
-{'type':'function', 'name':'func', 'code':'def func():
-    print(text)
-', 'globals':{'text':'Hello'}}
+{'attrs':{'age':32, 'gender':'female', 'name':'Alex'}, 'type':'class object', 'name':'Person', 'code':'class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.gender = "female"
+
+    def set_name(self, name):
+        self.name = name
+'}

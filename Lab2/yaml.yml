@@ -1,0 +1,9 @@
+attrs:
+  age: 32
+  gender: female
+  name: Alex
+code: "class Person:\n    def __init__(self, name, age):\n        self.name = name\n\
+  \        self.age = age\n        self.gender = \"female\"\n\n    def set_name(self,\
+  \ name):\n        self.name = name\n"
+name: Person
+type: class object

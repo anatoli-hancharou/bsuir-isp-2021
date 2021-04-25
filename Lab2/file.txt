@@ -1,0 +1,17 @@
+(dp0
+Vtype
+p1
+Vfunction
+p2
+sVname
+p3
+Vhello
+p4
+sVcode
+p5
+Vdef hello(name):\u000a    print(f"hello, {name}!")\u000a
+p6
+sVglobals
+p7
+(dp8
+s.

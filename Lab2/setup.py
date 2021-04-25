@@ -1,22 +1,24 @@
-import setuptools
+from setuptools import find_packages, setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="second_lab",
-    version="1.0",
-    author="Anatoli Goncharov",
-    author_email="anatoli.han@mail.com",
-    description="the full implementation of second lab",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    packages=setuptools.find_packages(),
-    install_requires=['toml', 'pyyaml'],
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Linux",
-    ],
-    python_requires='>=3.8',
+setup(
+    name="Lab2",
+    version="2.0",
+    packages=find_packages(include=['modules', 'modules.*']),
+    entry_points={
+        'console_scripts': [
+            'Serializer=modules.converter:setup',
+        ],
+    },
+    install_requires=[
+        'coverage==5.5',
+        'entrypoints==0.3',
+        'py==1.10.0',
+        'pytest==6.2.3',
+        'pytest-cov==2.11.1',
+        'python-apt==2.0.0+ubuntu0.20.4.4',
+        'PyYAML==5.4.1',
+        'simplejson==3.16.0',
+        'toml==0.10.2',
+        'virtualenv==20.0.17',
+    ]
 )

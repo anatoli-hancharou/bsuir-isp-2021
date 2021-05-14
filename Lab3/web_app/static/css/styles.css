@@ -1,0 +1,42 @@
+body {
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+aside {
+    float: left;
+    padding: 3%;
+    width: 15%;
+    height: 100vh;
+    background: #F9E0C0;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    display: block;
+    margin-top: 15px;
+}
+
+aside ul li:hover, aside ul a:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+    transition: all 0.6s ease;
+}
+
+h1 {
+    ont-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+#main-panel {
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+    top: 1px;
+    width: 100%;
+    margin: 0 auto;
+}

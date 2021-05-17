@@ -3,7 +3,19 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.page-header {
+    padding-top: 20px;
+    margin-top: 0px !important;
+}
+
+p.login, p.logout {
+    position: absolute;
+    bottom: 0px;
+    left: 25%;
+}
+
 aside {
+    position: relative;
     float: left;
     padding: 3%;
     width: 15%;

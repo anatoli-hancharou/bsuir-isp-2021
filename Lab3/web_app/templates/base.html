@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style_account.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" type="text/css">
+
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <aside>
@@ -16,10 +23,16 @@
             <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Main</li></a>
             <a href="{% url 'about' %}"><li><i class="fas fa-at"></i>Contacts</li></a>
         </ul>
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <p class="logout"><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></p>
+        {% else %}
+            <p class="login"><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log in</a></p>
+        {% endif %}
     </aside>
-    <mian>
+    <div class="content">
         {% block content %}
         {% endblock %}
-    </mian>
+    </div>
 </body>
 </html>

@@ -1,10 +1,17 @@
 {% extends "base.html" %}
+
+{% block page-header %}Home{% endblock %}
 {% block content %}
-    <h1 class="page-header">Home</h1>
     {% for post in object_list %}
         <div class="post-entry">
-            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
+            <h2>
+                <a href="{% url 'post_detail' post.pk %}" class="title">{{ post.title }}</a>
+                {% if user.is_authenticated and user.pk == post.author.id %}
+                    <a href='{% url "post_edit" post.pk %}'><i class="fas fa-edit"></i></a>
+                    <a href='{% url "post_delete" post.pk %}'><i class="fas fa-trash-alt"></i></a>
+                {% endif %}
+            </h2>
+            <p>{{ post.body|truncatechars:255 }}</p>
         </div>
     {% endfor %}
 {% endblock %}

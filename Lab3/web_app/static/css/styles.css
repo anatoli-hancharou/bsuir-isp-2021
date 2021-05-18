@@ -3,15 +3,66 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+#panel {
+    position: fixed;
+}
+
+.title {
+    font-family: ‘Rouge Script’, cursive;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+    text-decoration: none;
+}
+
+div.post-entry {
+    margin-top: 25px;
+}
+
+h2 i.fas {
+    position: relative;
+    bottom: 25px;
+    font-size: 17px;
+    opacity: 0.25;
+    margin-right: -10px;
+}
+
+p i.fas {
+    position: relative;
+    font-size: 15px;
+}
+
+li i.fas {
+    position: relative;
+    font-size: 15px;
+}
+
+h2 i.fas:hover {
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
 .page-header {
+    position: relative;
     padding-top: 20px;
     margin-top: 0px !important;
+    color: #F90B6D;
+     font-family: ‘Open Sans’, sans-serif;
+     font-size: 34px;
+      font-weight: 300;
+      line-height: 40px;
 }
 
 p.login, p.logout {
     position: absolute;
     bottom: 0px;
     left: 25%;
+}
+
+select {
+    display: block !important;
 }
 
 aside {
@@ -31,6 +82,7 @@ aside ul {
 aside ul li {
     display: block;
     margin-top: 15px;
+    font-size: 20px;
 }
 
 aside ul li:hover, aside ul a:hover {
@@ -40,7 +92,7 @@ aside ul li:hover, aside ul a:hover {
 }
 
 h1 {
-    ont-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: black;
 }
 
@@ -51,4 +103,42 @@ h1 {
     top: 1px;
     width: 100%;
     margin: 0 auto;
+}
+
+.header-h1 h1 {
+    position: relative;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+}
+
+.header-h1 h1::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #F90B6D;
+    bottom: .25rem;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+}
+
+.header-h1 h1::after {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #F90B6D;
+    bottom: 0;
+    left: 50%;
+    width: 15%;
+    transform: translateX(-50%);
+}
+
+.header-h1-left h1 {
+    text-align: left;
+}
+
+.header-h1-left h1::before,
+.header-h1-left h1::after {
+    left: 0;
+    transform: translateX(0);
 }

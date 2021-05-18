@@ -1,5 +1,7 @@
-{% extends 'base.html' %} &nbsp;{% block content %}
-<h2 class="page-header">Log In</h2>
+{% extends 'base.html' %} &nbsp;
+
+{% block page-header %}Log in{% endblock %}
+{% block content %}
 <form method="post">
   {% csrf_token %}
   {% if user.is_authenticated %}

@@ -3,9 +3,15 @@
 {% block page-header %}Edit post{% endblock %}
 {% block content %}
     {% if user.is_authenticated and user.pk == post.author.id %}
-        <form action="" method="post">{% csrf_token %}
-          {{ form.as_p }}
-            <input type="submit" value="Update" />
+        <form class="post-entry post-detail" style="border: none;" action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="inputContainer">
+                <i class="fas fa-pen icon"></i>
+                <input class="field" type="submit" value="Update" />
+            </div>
         </form>
     {% endif %}
 {% endblock%}
+
+

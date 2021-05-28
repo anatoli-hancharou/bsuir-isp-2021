@@ -2,12 +2,12 @@
 
 {% block page-header %}Post detail{% endblock %}
 {% block content %}
-    <div class="post-entry">
+    <div class="post-entry post-detail">
         <h2 class="page-header">{{ post.title }}</h2>
         <p>{{ post.body }}</p>
     </div>
     {% if user.is_authenticated and user.pk == post.author.id %}
-        <p><a href='{% url "post_edit" post.pk %}' class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit Blog Post</a></p>
+        <p class="detail-btn"><a href='{% url "post_edit" post.pk %}' class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit Blog Post</a></p>
         <p><a href="{% url 'post_delete' post.pk %}" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Delete Post</a></p>
     {% endif %}
 {% endblock %}

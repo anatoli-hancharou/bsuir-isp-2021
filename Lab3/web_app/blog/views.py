@@ -1,12 +1,12 @@
 import logging
-
 from django.contrib import messages
 from django.http import Http404
-from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .models import Post, Category
+
+logger = logging.getLogger('django')
 
 
 class BlogListView(ListView):
@@ -16,10 +16,6 @@ class BlogListView(ListView):
 
     queryset = Post.objects.order_by('-publication_date')
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(BlogListView, self).get_context_data(**kwargs)
-    #     context['object_list'] = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    #     return context
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['all_categories'] = Category.objects.all()
@@ -61,6 +57,7 @@ class BlogUpdateView(UpdateView):
         obj = super(BlogUpdateView, self).get_object(queryset)
         if obj.author != self.request.user:
             messages.error(self.request, "You can't edit this post")
+            logger.error("Attempt to get an access to update function")
             raise Http404("You don't own this object")
         return obj
 
@@ -74,6 +71,7 @@ class BlogDeleteView(DeleteView):
         obj = super(BlogDeleteView, self).get_object(queryset)
         if obj.author != self.request.user:
             messages.error(self.request, "You can't edit this post")
+            logger.error("Attempt to get an access to delete function")
             raise Http404("You don't own this object")
         return obj
 

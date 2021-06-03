@@ -3,7 +3,7 @@
 {% block page-header %}Edit post{% endblock %}
 {% block content %}
     {% if user.is_authenticated and user.pk == post.author.id %}
-        <form class="post-entry post-detail" style="border: none;" action="" method="post">
+        <form class="post-entry" style="border: none; height: 700px; width: 1000px;" action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="inputContainer">

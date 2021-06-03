@@ -1,20 +1,7 @@
 {% extends "base.html" %}
 
-{% block page-header %}Home{% endblock %}
+{% block page-header %}Category{% endblock %}
 {% block content %}
-    <aside style="position: absolute; right: 350px; padding: 10px;">
-        <h2 class="categories">Categories:</h2>
-            <ul class="list-group">
-                {% for category in all_categories %}
-                    <a href="{% url 'posts_by_category' category.title %}" class="list-group-item list-group-item-action">
-                        <i class="fas fa-link"></i>
-                        {{ category }}
-                    </a>
-                {% empty %}
-                     <p class="category">- No categories</p>
-                {% endfor %}
-            </ul>
-    </aside>
     {% for post in page_obj %}
         <div class="post-entry" onclick="location.href='{% url 'post_detail' post.pk %}';">
             <h2 class="title">
@@ -29,6 +16,8 @@
             <p>{{ post.body|truncatechars:255 }}</p>
             <h3 class="author"><span>-by</span> {{ post.author.username }}</h3>
         </div>
+    {% empty %}
+        <h2>No items</h2>
     {% endfor %}
 
 <nav class="my-paginator" aria-label="">

@@ -88,18 +88,25 @@ WSGI_APPLICATION = 'web_app.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'testDB',
+#         'USER': 'anatoli',
+#         'PASSWORD': 'sankabar',
+#         'HOST': 'localhost',
+#     },
+#     'TEST': {
+#         'NAME': 'test_testDB',
 #     }
 # }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testDB',
-        'USER': 'anatoli',
-        'PASSWORD': 'sankabar',
-        'HOST': 'localhost',
+        'NAME': 'db_django',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': 'db',
+        'PORT': '3306',
     },
     'TEST': {
         'NAME': 'test_testDB',

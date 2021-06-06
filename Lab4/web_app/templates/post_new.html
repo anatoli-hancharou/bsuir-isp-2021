@@ -5,7 +5,7 @@
     {% if user.is_authenticated %}
         <form action="." method="post">{% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Save" />
+            <input class="field" style="width: 100px;" type="submit" value="Save" />
         </form>
     {% else %}
         <h1 class="page-header">First you have to log in!</h1>

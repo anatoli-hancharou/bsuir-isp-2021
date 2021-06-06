@@ -132,7 +132,7 @@ h2.title a {
     transition: 0.5s linear;
 }
 
-#id_title{
+#id_password, #id_password1, #id_password2, #id_username, #id_title {
     margin-top: 10px;
     color: #e46f75;
     background-color: #39313d;

@@ -15,7 +15,6 @@ services:
       - ./db_django:/var/lib/mysql
   web:
     image: anatoli2001/blog_app:1.0
-    build: ./web
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/web_django

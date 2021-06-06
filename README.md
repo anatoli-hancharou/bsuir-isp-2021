@@ -5,3 +5,5 @@
  To ***resolve*** it type: 1) *docker-compose stop* 2) *docker-compose up*
 4. *docker-compose run web python manage.py migrate*
 5. Done.
+#### p.s.
+List of categories should be filled by admin user, because its data is contained in db (db is empty from the start of use) 

@@ -7,3 +7,4 @@
 5. Done.
 #### p.s.
 List of categories should be filled by admin user, because its data is contained in db (db is empty from the start of use) 
++ https://hub.docker.com/repository/docker/anatoli2001/blog_app

@@ -1,8 +1,0 @@
-from modules.SerializerCreator import Creator
-from modules.Serializer import Serializer
-from modules.TomlSerialization import TomlSerializer
-
-
-class TomlSerializerCreator(Creator):
-    def create_serializer(self) -> Serializer:
-        return TomlSerializer()
